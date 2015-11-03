@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Library</name>
+    </assembly>
+    <members>
+        <member name="M:Library.CommsDecoder._SerialInstance_SerialDataReceived(System.Byte[])">
+            <summary>
+            Serial Data Received Event Handler
+            </summary>
+            <param name="SerialData"> Array of Received Serial byte values </param>
+        </member>
+        <member name="F:TestSerialDLL.SerialWrapper.iBaudRate">
+            <summary>
+            The baud rate at which the communications device operates.
+            </summary>
+        </member>
+        <member name="F:TestSerialDLL.SerialWrapper.byteSize">
+            <summary>
+            The number of bits in the bytes to be transmitted and received.
+            </summary>
+        </member>
+        <member name="F:TestSerialDLL.SerialWrapper.pHandle">
+            <summary>
+            The system handle to the serial port connection ('file' handle).
+            </summary>
+        </member>
+        <member name="F:TestSerialDLL.SerialWrapper.parity">
+            <summary>
+            The parity scheme to be used.
+            </summary>
+        </member>
+        <member name="F:TestSerialDLL.SerialWrapper.sPortName">
+            <summary>
+            The name of the serial port to connect to.
+            </summary>
+        </member>
+        <member name="F:TestSerialDLL.SerialWrapper.stopBits">
+            <summary>
+            The number of bits in the bytes to be transmitted and received.
+            </summary>
+        </member>
+        <member name="M:TestSerialDLL.SerialWrapper.#ctor(System.String,System.Int32,TestSerialDLL.SerialWrapper.StopBits,TestSerialDLL.SerialWrapper.Parity,System.Byte)">
+            <summary>
+            Creates a new instance of SerialCom.
+            </summary>
+            <param>The name of the serial port to connect to</param>
+            <param>The baud rate at which the communications device operates</param>
+            <param>The number of stop bits to be used</param>
+            <param>The parity scheme to be used</param>
+            <param>The number of bits in the bytes to be transmitted and received</param>
+        </member>
+        <member name="M:TestSerialDLL.SerialWrapper.#ctor(System.String,System.Int32,TestSerialDLL.SerialWrapper.StopBits,TestSerialDLL.SerialWrapper.Parity)">
+            <summary>
+            Creates a new instance of SerialCom.
+            </summary>
+            <param>The name of the serial port to connect to</param>
+            <param>The baud rate at which the communications device operates</param>
+            <param>The number of stop bits to be used</param>
+            <param>The parity scheme to be used</param>
+        </member>
+        <member name="M:TestSerialDLL.SerialWrapper.Open">
+            <summary>
+            Opens and initializes the serial connection.
+            </summary>
+            <returns>Whether or not the operation succeeded</returns>
+        </member>
+        <member name="M:TestSerialDLL.SerialWrapper.Write(System.Byte[])">
+            <summary>
+            Transmits the specified array of bytes.
+            </summary>
+            <param>The bytes to write</param>
+            <returns>The number of bytes written (-1 if error)</returns>
+        </member>
+        <member name="M:TestSerialDLL.SerialWrapper.Write(System.String)">
+            <summary>
+            Transmits the specified string.
+            </summary>
+            <param>The string to write</param>
+            <returns>The number of bytes written (-1 if error)</returns>
+        </member>
+        <member name="M:TestSerialDLL.SerialWrapper.WriteLine(System.String)">
+            <summary>
+            Transmits the specified string and appends the carriage return to the end
+            if it does not exist.
+            </summary>
+            <remarks>
+            Note that the string must end in '\r\n' before any serial device will interpret the data
+            sent. For ease of programmability, this method should be used instead of Write() when you
+            want to automatically execute the specified command string.
+            </remarks>
+            <param>The string to write</param>
+            <returns>The number of bytes written (-1 if error)</returns>
+        </member>
+        <member name="M:TestSerialDLL.SerialWrapper.Read(System.Byte[])">
+            <summary>
+            Reads any bytes that have been received and writes them to the specified array.
+            </summary>
+            <param>The array to write the read data to</param>
+            <returns>The number of bytes read (-1 if error)</returns>
+        </member>
+        <member name="M:TestSerialDLL.SerialWrapper.ReadString(System.Int32)">
+            <summary>
+            Reads any data that has been received as a string.
+            </summary>
+            <param>The maximum number of bytes to read</param>
+            <returns>The data received (null if no data)</returns>
+        </member>
+        <member name="M:TestSerialDLL.SerialWrapper.Dispose">
+            <summary>
+            Disconnects and disposes of the SerialCom instance.
+            </summary>
+        </member>
+        <member name="M:TestSerialDLL.SerialWrapper.Flush">
+            <summary>
+            Flushes the serial I/O buffers.
+            </summary>
+            <returns>Whether or not the operation succeeded</returns>
+        </member>
+        <member name="M:TestSerialDLL.SerialWrapper.ConfigureSerialPort">
+            <summary>
+            Configures the serial device based on the connection parameters pased in by the user.
+            </summary>
+            <returns>Whether or not the operation succeeded</returns>
+        </member>
+        <member name="M:TestSerialDLL.SerialWrapper.FailIfNotConnected">
+            <summary>
+            Helper that throws a InvalidOperationException if we don't have a serial connection.
+            </summary>
+        </member>
+        <member name="T:TestSerialDLL.SerialWrapper.COMMTIMEOUTS">
+            <summary>
+            Contains the time-out parameters for a communications device.
+            </summary>
+        </member>
+        <member name="T:TestSerialDLL.SerialWrapper.DCB">
+            <summary>
+            Defines the control setting for a serial communications device.
+            </summary>
+        </member>
+        <member name="T:Library.Generic">
+            <summary>
+            Generic Functions Class
+            </summary>
+        </member>
+        <member name="T:Library.SerialPortClass.ReceivedSerialEventHandler">
+            <summary>
+            Serial Data Received Event
+            </summary>
+            <param name="SerialData"> Array of Received Serial byte values </param>
+        </member>
+        <member name="T:ScenarioControl.Library.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ScenarioControl.Library.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ScenarioControl.Library.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

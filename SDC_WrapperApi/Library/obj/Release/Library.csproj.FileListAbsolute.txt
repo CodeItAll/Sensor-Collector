@@ -1,0 +1,34 @@
+C:\Work\Osprey\Testbench SW\Osprey SW\Library\bin\Release\Library.dll.config
+C:\Work\Osprey\Testbench SW\Osprey SW\Library\bin\Release\Library.dll
+C:\Work\Osprey\Testbench SW\Osprey SW\Library\bin\Release\Library.pdb
+C:\Work\Osprey\Testbench SW\Osprey SW\Library\obj\Release\ResolveAssemblyReference.cache
+C:\Work\Osprey\Testbench SW\Osprey SW\Library\obj\Release\Library.dll
+C:\Work\Osprey\Testbench SW\Osprey SW\Library\obj\Release\Library.pdb
+G:\Osprey SW\Library\bin\Release\Library.dll.config
+G:\Osprey SW\Library\bin\Release\Library.dll
+G:\Osprey SW\Library\bin\Release\Library.pdb
+G:\Osprey SW\Library\obj\Release\Library.dll
+G:\Osprey SW\Library\obj\Release\Library.pdb
+C:\Users\yatm\Desktop\Osprey SW\Library\bin\Release\Library.dll.config
+C:\Users\yatm\Desktop\Osprey SW\Library\bin\Release\Library.dll
+C:\Users\yatm\Desktop\Osprey SW\Library\bin\Release\Library.pdb
+C:\Users\yatm\Desktop\Osprey SW\Library\obj\Release\Library.dll
+C:\Users\yatm\Desktop\Osprey SW\Library\obj\Release\Library.pdb
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Release\eezitracker.mdf
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Release\eezitracker_log.ldf
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Release\Library.dll.config
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Release\Library.dll
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Release\Library.pdb
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Release\CodeScience.DataModel.Generic.dll
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Release\CodeScience.DataTables.dll
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Release\CodeScience.EeziTracker.Controller.Api.dll
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Release\CodeScience.Global.dll
+C:\Work\TempSensor\SDC_WrapperApi\Library\obj\Release\ScenarioControl.Library.Properties.Resources.resources
+C:\Work\TempSensor\SDC_WrapperApi\Library\obj\Release\Library.csproj.GenerateResource.Cache
+C:\Work\TempSensor\SDC_WrapperApi\Library\obj\Release\Library.dll
+C:\Work\TempSensor\SDC_WrapperApi\Library\obj\Release\Library.pdb
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Release\System.Net.Http.Formatting.dll
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Release\CodeScience.EeziTracker.Controller.Api.pdb
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Release\CodeScience.EeziTracker.Controller.Api.xml
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Release\System.Net.Http.Formatting.xml
+C:\Work\TempSensor\SDC_WrapperApi\Library\obj\Release\Library.csprojResolveAssemblyReference.cache

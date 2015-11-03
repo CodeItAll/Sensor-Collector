@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorCollectorForm", "SensorCollectorForm\SensorCollectorForm.csproj", "{CE91F5E2-797D-48DB-82BC-F8A8A3EE01EA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{337CF226-A078-478F-93BC-BFCCC88C98D2} = {337CF226-A078-478F-93BC-BFCCC88C98D2}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "..\SDC_WrapperApi\Library\Library.csproj", "{337CF226-A078-478F-93BC-BFCCC88C98D2}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CodeScience.EeziTracker.Controller.Api", "..\CodeScience.EeziTracker.Controller.Api\CodeScience.EeziTracker.Controller.Api.vbproj", "{7B227C3D-1D6C-422D-8557-6B73289E4602}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE91F5E2-797D-48DB-82BC-F8A8A3EE01EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE91F5E2-797D-48DB-82BC-F8A8A3EE01EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE91F5E2-797D-48DB-82BC-F8A8A3EE01EA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{CE91F5E2-797D-48DB-82BC-F8A8A3EE01EA}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{CE91F5E2-797D-48DB-82BC-F8A8A3EE01EA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CE91F5E2-797D-48DB-82BC-F8A8A3EE01EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE91F5E2-797D-48DB-82BC-F8A8A3EE01EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE91F5E2-797D-48DB-82BC-F8A8A3EE01EA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{CE91F5E2-797D-48DB-82BC-F8A8A3EE01EA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{CE91F5E2-797D-48DB-82BC-F8A8A3EE01EA}.Release|x86.ActiveCfg = Release|Any CPU
+		{337CF226-A078-478F-93BC-BFCCC88C98D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{337CF226-A078-478F-93BC-BFCCC88C98D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{337CF226-A078-478F-93BC-BFCCC88C98D2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{337CF226-A078-478F-93BC-BFCCC88C98D2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{337CF226-A078-478F-93BC-BFCCC88C98D2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{337CF226-A078-478F-93BC-BFCCC88C98D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{337CF226-A078-478F-93BC-BFCCC88C98D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{337CF226-A078-478F-93BC-BFCCC88C98D2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{337CF226-A078-478F-93BC-BFCCC88C98D2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{337CF226-A078-478F-93BC-BFCCC88C98D2}.Release|x86.ActiveCfg = Release|Any CPU
+		{7B227C3D-1D6C-422D-8557-6B73289E4602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B227C3D-1D6C-422D-8557-6B73289E4602}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B227C3D-1D6C-422D-8557-6B73289E4602}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7B227C3D-1D6C-422D-8557-6B73289E4602}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7B227C3D-1D6C-422D-8557-6B73289E4602}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7B227C3D-1D6C-422D-8557-6B73289E4602}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B227C3D-1D6C-422D-8557-6B73289E4602}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B227C3D-1D6C-422D-8557-6B73289E4602}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7B227C3D-1D6C-422D-8557-6B73289E4602}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7B227C3D-1D6C-422D-8557-6B73289E4602}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

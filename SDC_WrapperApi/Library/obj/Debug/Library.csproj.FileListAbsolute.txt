@@ -1,0 +1,188 @@
+C:\Work\Osprey\Repository\Raster\SCF\Library\bin\Debug\Library.dll.config
+C:\Work\Osprey\Repository\Raster\SCF\Library\bin\Debug\Library.xml
+C:\Work\Osprey\Repository\Raster\SCF\Library\bin\Debug\Library.dll
+C:\Work\Osprey\Repository\Raster\SCF\Library\bin\Debug\Library.pdb
+C:\Work\Osprey\Repository\Raster\SCF\Library\obj\Debug\ResolveAssemblyReference.cache
+C:\Work\Osprey\Repository\Raster\SCF\Library\obj\Debug\Library.dll
+C:\Work\Osprey\Repository\Raster\SCF\Library\obj\Debug\Library.pdb
+C:\Work\SDC\Library\bin\Debug\Library.dll.config
+C:\Work\SDC\Library\bin\Debug\Library.dll
+C:\Work\SDC\Library\bin\Debug\Library.pdb
+C:\Work\SDC\Library\obj\Debug\Library.dll
+C:\Work\SDC\Library\obj\Debug\Library.pdb
+C:\Work\SDC\Library\obj\Debug\ResolveAssemblyReference.cache
+C:\Work\SDC\SDC\Library\obj\Debug\ResolveAssemblyReference.cache
+C:\Work\SDC\SDC\Library\obj\Debug\Library.dll
+C:\Work\SDC\SDC\Library\obj\Debug\Library.pdb
+C:\Work\SDC\SDC\Library\bin\Debug\Library.dll.config
+C:\Work\SDC\SDC\Library\bin\Debug\Library.dll
+C:\Work\SDC\SDC\Library\bin\Debug\Library.pdb
+C:\Work\SDC\SDC\Library\bin\Debug\Library.xml
+C:\Work\SDC 19 May\SDC\Library\bin\Debug\Library.dll.config
+C:\Work\SDC 19 May\SDC\Library\bin\Debug\Library.xml
+C:\Work\SDC 19 May\SDC\Library\bin\Debug\Library.dll
+C:\Work\SDC 19 May\SDC\Library\bin\Debug\Library.pdb
+C:\Work\SDC 19 May\SDC\Library\obj\Debug\ResolveAssemblyReference.cache
+C:\Work\SDC 19 May\SDC\Library\obj\Debug\Library.dll
+C:\Work\SDC 19 May\SDC\Library\obj\Debug\Library.pdb
+C:\Work\SDC\SDC 20 May\SDC\Library\bin\Debug\Library.dll.config
+C:\Work\SDC\SDC 20 May\SDC\Library\bin\Debug\Library.xml
+C:\Work\SDC\SDC 20 May\SDC\Library\bin\Debug\Library.dll
+C:\Work\SDC\SDC 20 May\SDC\Library\bin\Debug\Library.pdb
+C:\Work\SDC\SDC 20 May\SDC\Library\obj\Debug\ResolveAssemblyReference.cache
+C:\Work\SDC\SDC 20 May\SDC\Library\obj\Debug\Library.dll
+C:\Work\SDC\SDC 20 May\SDC\Library\obj\Debug\Library.pdb
+C:\Work\SDC 20 May\SDC\Library\obj\Debug\ResolveAssemblyReference.cache
+C:\Work\SDC 20 May\SDC\Library\obj\Debug\Library.dll
+C:\Work\SDC 20 May\SDC\Library\bin\Debug\Library.dll.config
+C:\Work\SDC 20 May\SDC\Library\bin\Debug\Library.xml
+C:\Work\SDC 20 May\SDC\Library\bin\Debug\Library.dll
+C:\Work\SDC 20 May\SDC\Library\bin\Debug\Library.pdb
+C:\Work\SDC 20 May\SDC\Library\obj\Debug\Library.pdb
+C:\Work\SDC\SDC 22 May b\SDC\Library\bin\Debug\Library.dll.config
+C:\Work\SDC\SDC 22 May b\SDC\Library\bin\Debug\Library.xml
+C:\Work\SDC\SDC 22 May b\SDC\Library\bin\Debug\Library.dll
+C:\Work\SDC\SDC 22 May b\SDC\Library\bin\Debug\Library.pdb
+C:\Work\SDC\SDC 22 May b\SDC\Library\obj\Debug\ResolveAssemblyReference.cache
+C:\Work\SDC\SDC 22 May b\SDC\Library\obj\Debug\Library.dll
+C:\Work\SDC\SDC 22 May b\SDC\Library\obj\Debug\Library.pdb
+C:\Work\SDC 24 May\SDC\Library\bin\Debug\Library.dll.config
+C:\Work\SDC 24 May\SDC\Library\bin\Debug\Library.dll
+C:\Work\SDC 24 May\SDC\Library\bin\Debug\Library.pdb
+C:\Work\SDC 24 May\SDC\Library\obj\Debug\ResolveAssemblyReference.cache
+C:\Work\SDC 24 May\SDC\Library\obj\Debug\Library.dll
+C:\Work\SDC 24 May\SDC\Library\obj\Debug\Library.pdb
+C:\Work\SDC 24 May\SDC\Library\bin\Debug\Library.xml
+C:\Work\SDC 25 May\SDC\Library\bin\Debug\Library.dll.config
+C:\Work\SDC 25 May\SDC\Library\bin\Debug\Library.xml
+C:\Work\SDC 25 May\SDC\Library\bin\Debug\Library.dll
+C:\Work\SDC 25 May\SDC\Library\bin\Debug\Library.pdb
+C:\Work\SDC 25 May\SDC\Library\obj\Debug\ResolveAssemblyReference.cache
+C:\Work\SDC 25 May\SDC\Library\obj\Debug\Library.dll
+C:\Work\SDC 25 May\SDC\Library\obj\Debug\Library.pdb
+C:\Work\SDC\SDC 25 May\SDC\Library\bin\Debug\Library.dll.config
+C:\Work\SDC\SDC 25 May\SDC\Library\bin\Debug\Library.xml
+C:\Work\SDC\SDC 25 May\SDC\Library\bin\Debug\Library.dll
+C:\Work\SDC\SDC 25 May\SDC\Library\bin\Debug\Library.pdb
+C:\Work\SDC\SDC 25 May\SDC\Library\obj\Debug\ResolveAssemblyReference.cache
+C:\Work\SDC\SDC 25 May\SDC\Library\obj\Debug\Library.dll
+C:\Work\SDC\SDC 25 May\SDC\Library\obj\Debug\Library.pdb
+C:\Work\SDC\SDC 27 May\SDC\Library\bin\Debug\Library.dll.config
+C:\Work\SDC\SDC 27 May\SDC\Library\bin\Debug\Library.xml
+C:\Work\SDC\SDC 27 May\SDC\Library\bin\Debug\Library.dll
+C:\Work\SDC\SDC 27 May\SDC\Library\bin\Debug\Library.pdb
+C:\Work\SDC\SDC 27 May\SDC\Library\obj\Debug\ResolveAssemblyReference.cache
+C:\Work\SDC\SDC 27 May\SDC\Library\obj\Debug\Library.dll
+C:\Work\SDC\SDC 27 May\SDC\Library\obj\Debug\Library.pdb
+C:\Work\SDC 28 May\SDC\Library\bin\Debug\Library.dll.config
+C:\Work\SDC 28 May\SDC\Library\bin\Debug\Library.xml
+C:\Work\SDC 28 May\SDC\Library\bin\Debug\Library.dll
+C:\Work\SDC 28 May\SDC\Library\bin\Debug\Library.pdb
+C:\Work\SDC 28 May\SDC\Library\obj\Debug\ResolveAssemblyReference.cache
+C:\Work\SDC 28 May\SDC\Library\obj\Debug\Library.dll
+C:\Work\SDC 28 May\SDC\Library\obj\Debug\Library.pdb
+C:\Work\SDC\SDC 28 May\SDC 28 May\SDC\Library\obj\Debug\ResolveAssemblyReference.cache
+C:\Work\SDC\SDC 28 May\SDC 28 May\SDC\Library\obj\Debug\Library.dll
+C:\Work\SDC\SDC 28 May\SDC 28 May\SDC\Library\obj\Debug\Library.pdb
+C:\Work\SDC\SDC 28 May\SDC 28 May\SDC\Library\bin\Debug\Library.dll.config
+C:\Work\SDC\SDC 28 May\SDC 28 May\SDC\Library\bin\Debug\Library.xml
+C:\Work\SDC\SDC 28 May\SDC 28 May\SDC\Library\bin\Debug\Library.dll
+C:\Work\SDC\SDC 28 May\SDC 28 May\SDC\Library\bin\Debug\Library.pdb
+C:\Work\SDC 30 May\SDC\Library\bin\Debug\Library.dll.config
+C:\Work\SDC 30 May\SDC\Library\bin\Debug\Library.dll
+C:\Work\SDC 30 May\SDC\Library\bin\Debug\Library.pdb
+C:\Work\SDC 30 May\SDC\Library\obj\Debug\ResolveAssemblyReference.cache
+C:\Work\SDC 30 May\SDC\Library\obj\Debug\Library.dll
+C:\Work\SDC 30 May\SDC\Library\obj\Debug\Library.pdb
+C:\Work\SDC 31 May\SDC\Library\bin\Debug\Library.dll.config
+C:\Work\SDC 31 May\SDC\Library\bin\Debug\Library.xml
+C:\Work\SDC 31 May\SDC\Library\bin\Debug\Library.dll
+C:\Work\SDC 31 May\SDC\Library\bin\Debug\Library.pdb
+C:\Work\SDC 31 May\SDC\Library\obj\Debug\Library.dll
+C:\Work\SDC 31 May\SDC\Library\obj\Debug\Library.pdb
+C:\Work\SDC 1 June\SDC\Library\obj\Debug\Library.dll
+C:\Work\SDC 1 June\SDC\Library\bin\Debug\Library.dll.config
+C:\Work\SDC 1 June\SDC\Library\bin\Debug\Library.xml
+C:\Work\SDC 1 June\SDC\Library\bin\Debug\Library.dll
+C:\Work\SDC 1 June\SDC\Library\bin\Debug\Library.pdb
+C:\Work\SDC 1 June\SDC\Library\obj\Debug\Library.pdb
+C:\Work\SDC\SDC 2 June\SDC\Library\bin\Debug\Library.dll.config
+C:\Work\SDC\SDC 2 June\SDC\Library\bin\Debug\Library.xml
+C:\Work\SDC\SDC 2 June\SDC\Library\bin\Debug\Library.dll
+C:\Work\SDC\SDC 2 June\SDC\Library\bin\Debug\Library.pdb
+C:\Work\SDC\SDC 2 June\SDC\Library\obj\Debug\ResolveAssemblyReference.cache
+C:\Work\SDC\SDC 2 June\SDC\Library\obj\Debug\Library.dll
+C:\Work\SDC\SDC 2 June\SDC\Library\obj\Debug\Library.pdb
+C:\Work\SDC 2 June\SDC\Library\bin\Debug\Library.dll.config
+C:\Work\SDC 2 June\SDC\Library\bin\Debug\Library.xml
+C:\Work\SDC 2 June\SDC\Library\bin\Debug\Library.dll
+C:\Work\SDC 2 June\SDC\Library\bin\Debug\Library.pdb
+C:\Work\SDC 2 June\SDC\Library\obj\Debug\Library.dll
+C:\Work\SDC 2 June\SDC\Library\obj\Debug\Library.pdb
+C:\Work\SDC 3 June\SDC\Library\bin\Debug\Library.dll.config
+C:\Work\SDC 3 June\SDC\Library\bin\Debug\Library.xml
+C:\Work\SDC 3 June\SDC\Library\bin\Debug\Library.dll
+C:\Work\SDC 3 June\SDC\Library\bin\Debug\Library.pdb
+C:\Work\SDC 3 June\SDC\Library\obj\Debug\Library.dll
+C:\Work\SDC 3 June\SDC\Library\obj\Debug\Library.pdb
+C:\Work\SDC 5 June\SDC\Library\bin\Debug\Library.dll.config
+C:\Work\SDC 5 June\SDC\Library\bin\Debug\Library.xml
+C:\Work\SDC 5 June\SDC\Library\bin\Debug\Library.dll
+C:\Work\SDC 5 June\SDC\Library\bin\Debug\Library.pdb
+C:\Work\SDC 5 June\SDC\Library\obj\Debug\Library.dll
+C:\Work\SDC 5 June\SDC\Library\obj\Debug\Library.pdb
+C:\Work\SDC 6 June\SDC\Library\bin\Debug\Library.dll.config
+C:\Work\SDC 6 June\SDC\Library\bin\Debug\Library.xml
+C:\Work\SDC 6 June\SDC\Library\bin\Debug\Library.dll
+C:\Work\SDC 6 June\SDC\Library\bin\Debug\Library.pdb
+C:\Work\SDC 6 June\SDC\Library\obj\Debug\Library.dll
+C:\Work\SDC 6 June\SDC\Library\obj\Debug\Library.pdb
+C:\Work\Old\SDC 6 June\SDC\Library\bin\Debug\Library.dll.config
+C:\Work\Old\SDC 6 June\SDC\Library\bin\Debug\Library.xml
+C:\Work\Old\SDC 6 June\SDC\Library\bin\Debug\Library.dll
+C:\Work\Old\SDC 6 June\SDC\Library\bin\Debug\Library.pdb
+C:\Work\Old\SDC 6 June\SDC\Library\obj\Debug\Library.dll
+C:\Work\Old\SDC 6 June\SDC\Library\obj\Debug\Library.pdb
+C:\Work\SDC_WrapperApi\Library\bin\Debug\Library.dll.config
+C:\Work\SDC_WrapperApi\Library\bin\Debug\Library.dll
+C:\Work\SDC_WrapperApi\Library\bin\Debug\Library.pdb
+C:\Work\SDC_WrapperApi\Library\obj\Debug\Library.dll
+C:\Work\SDC_WrapperApi\Library\obj\Debug\Library.pdb
+C:\Work\SDC_WrapperApi\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Debug\eezitracker.mdf
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Debug\eezitracker_log.ldf
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Debug\Library.dll.config
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Debug\Library.xml
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Debug\Library.dll
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Debug\Library.pdb
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Debug\CodeScience.DataModel.Generic.dll
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Debug\CodeScience.DataTables.dll
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Debug\CodeScience.EeziTracker.Controller.Api.dll
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Debug\CodeScience.Global.dll
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Debug\System.Net.Http.Formatting.dll
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Debug\CodeScience.EeziTracker.Controller.Api.pdb
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Debug\CodeScience.EeziTracker.Controller.Api.xml
+C:\Work\TempSensor\SDC_WrapperApi\Library\bin\Debug\System.Net.Http.Formatting.xml
+C:\Work\TempSensor\SDC_WrapperApi\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
+C:\Work\TempSensor\SDC_WrapperApi\Library\obj\Debug\ScenarioControl.Library.Properties.Resources.resources
+C:\Work\TempSensor\SDC_WrapperApi\Library\obj\Debug\Library.csproj.GenerateResource.Cache
+C:\Work\TempSensor\SDC_WrapperApi\Library\obj\Debug\Library.dll
+C:\Work\TempSensor\SDC_WrapperApi\Library\obj\Debug\Library.pdb
+D:\svn\Sensor-Collector\SDC_WrapperApi\Library\obj\Debug\ScenarioControl.Library.Properties.Resources.resources
+D:\svn\Sensor-Collector\SDC_WrapperApi\Library\obj\Debug\Library.csproj.GenerateResource.Cache
+D:\svn\Sensor-Collector\SDC_WrapperApi\Library\bin\Debug\eezitracker.mdf
+D:\svn\Sensor-Collector\SDC_WrapperApi\Library\bin\Debug\eezitracker_log.ldf
+D:\svn\Sensor-Collector\SDC_WrapperApi\Library\bin\Debug\Library.dll.config
+D:\svn\Sensor-Collector\SDC_WrapperApi\Library\bin\Debug\Library.xml
+D:\svn\Sensor-Collector\SDC_WrapperApi\Library\bin\Debug\Library.dll
+D:\svn\Sensor-Collector\SDC_WrapperApi\Library\bin\Debug\Library.pdb
+D:\svn\Sensor-Collector\SDC_WrapperApi\Library\bin\Debug\CodeScience.DataModel.Generic.dll
+D:\svn\Sensor-Collector\SDC_WrapperApi\Library\bin\Debug\CodeScience.DataTables.dll
+D:\svn\Sensor-Collector\SDC_WrapperApi\Library\bin\Debug\CodeScience.EeziTracker.Controller.Api.dll
+D:\svn\Sensor-Collector\SDC_WrapperApi\Library\bin\Debug\CodeScience.Global.dll
+D:\svn\Sensor-Collector\SDC_WrapperApi\Library\bin\Debug\System.Net.Http.Formatting.dll
+D:\svn\Sensor-Collector\SDC_WrapperApi\Library\bin\Debug\CodeScience.EeziTracker.Controller.Api.pdb
+D:\svn\Sensor-Collector\SDC_WrapperApi\Library\bin\Debug\System.Net.Http.Formatting.xml
+D:\svn\Sensor-Collector\SDC_WrapperApi\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
+D:\svn\Sensor-Collector\SDC_WrapperApi\Library\obj\Debug\Library.dll
+D:\svn\Sensor-Collector\SDC_WrapperApi\Library\obj\Debug\Library.pdb
