@@ -29,23 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "SET RTC",
             "-",
             "-",
             "-"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "DWNLOAD EEPROM",
             "-",
             "-",
             "-"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "CLR EEPROM",
             "-",
             "-",
             "-"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "SEND TO SERVER",
+            "-",
+            "-",
+            "-"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            "GET RTC",
             "-",
             "-",
             "-"}, -1);
@@ -55,6 +60,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel_tab2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.comboBox_serialPorts = new System.Windows.Forms.ComboBox();
@@ -137,6 +143,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.Controls.Add(this.button5, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.button3, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.button4, 3, 3);
@@ -159,6 +166,16 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(494, 424);
             this.tableLayoutPanel2.TabIndex = 27;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(3, 339);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(100, 43);
+            this.button5.TabIndex = 27;
+            this.button5.Text = "Test Function - DateTime";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button3
             // 
@@ -234,7 +251,7 @@
             // timer_Get_EEPROM
             // 
             this.timer_Get_EEPROM.Enabled = true;
-            this.timer_Get_EEPROM.Interval = 450000;
+            this.timer_Get_EEPROM.Interval = 60000;
             this.timer_Get_EEPROM.Tick += new System.EventHandler(this.timer_Get_EEPROM_Tick);
             // 
             // tabControl1
@@ -290,10 +307,11 @@
             this.MessageListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MessageListView.GridLines = true;
             this.MessageListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem21,
-            listViewItem22,
-            listViewItem23,
-            listViewItem24});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5});
             this.MessageListView.LabelWrap = false;
             this.MessageListView.Location = new System.Drawing.Point(3, 3);
             this.MessageListView.Name = "MessageListView";
@@ -347,7 +365,7 @@
             // 
             // timer_UpdateToServer
             // 
-            this.timer_UpdateToServer.Interval = 450000;
+            this.timer_UpdateToServer.Interval = 300000;
             this.timer_UpdateToServer.Tick += new System.EventHandler(this.timer_UpdateToServer_Tick);
             // 
             // Form1
@@ -398,5 +416,6 @@
         private System.Windows.Forms.RichTextBox richTextBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Timer timer_UpdateToServer;
+        private System.Windows.Forms.Button button5;
     }
 }

@@ -424,11 +424,12 @@ namespace Library
                 System.Threading.Thread.Sleep(100);
                 sleepCount += 1;
                 System.Diagnostics.Debug.Print(sleepCount.ToString());
-                if (sleepCount > 100) //5 seconds should be heaps !!!
+                if (sleepCount > 50) //5 seconds should be heaps !!!
                 {
                     throw new Exception(String.Format("Failed to open USB com port {0}", comPort.PortName));
                 }
             }
+            this.comPort.DiscardInBuffer();
             return true;
         }
         private bool TryOpenPort()
@@ -442,8 +443,14 @@ namespace Library
                 }
                 catch (UnauthorizedAccessException)
                 {
-                    comPort.Close();
-                    return false;
+                    if (comPort != null)
+                    {
+                        comPort.DiscardInBuffer();
+                        comPort.DiscardOutBuffer();
+                        comPort.Close();
+                    }
+                    
+                    return false;                    
                 }
                 catch
                 {

@@ -59,6 +59,7 @@ namespace SensorCollectorForm
             {
                 //DisplayData(Ex.Message);
                 System.Diagnostics.Debug.WriteLine(Ex.Message);
+                
             }            
         }
 
@@ -108,6 +109,7 @@ namespace SensorCollectorForm
         private void btn_clear_eeprom_Click(object sender, EventArgs e)
         {
             // !A
+            /*
             try
             {
                 GetSerialPorts();
@@ -117,9 +119,18 @@ namespace SensorCollectorForm
             }
             catch (Exception Ex)
             {
+                //NEW
+                if (sense_o != null)
+                {
+                    sense_o.Dispose();
+                    GC.Collect();
+                }
+
                 DisplayData(Ex.Message);
                 System.Diagnostics.Debug.WriteLine(Ex.Message);
             }
+            */
+            Clear_EEPROM();
         }
 
         private void btn_read_rtc_Click(object sender, EventArgs e)
@@ -130,21 +141,35 @@ namespace SensorCollectorForm
                 GetSerialPorts();
                 if (SelectedPort != "")
                 {
-                    sense_o = new SENSOR_OBJECT(SENSOR_OBJECT.EBaudRate.Baud9600, SelectedPort);
+                    sense_o = new SENSOR_OBJECT(SENSOR_OBJECT.EBaudRate.Baud250000, SelectedPort);
                     sense_o.TEMP_RESPONSE_ARRAY += sense_o_TEMP_RESPONSE_ARRAY;
+                    sense_o.GET_RTC_RESPONSE_RECEIVED += Sense_o_GET_RTC_RESPONSE_RECEIVED;
+                    sense_o.TIMEOUT_RESPONSE_RECEIVED += Sense_o_TIMEOUT_RESPONSE_RECEIVED;
+
                     sense_o.Get_RTC();
                 }
             }
             catch (Exception Ex)
             {
+                //NEW
+                if (sense_o != null)
+                {
+                    sense_o.Dispose();
+                    GC.Collect();
+                }
+
                 DisplayData(Ex.Message);
                 System.Diagnostics.Debug.WriteLine(Ex.Message);
             }
         }
 
+       
+
         private void btn_write_RTC_Click(object sender, EventArgs e)
         {
             // !C
+            Set_RTC();
+            /*
             try
             {
                 GetSerialPorts();
@@ -157,9 +182,17 @@ namespace SensorCollectorForm
             }
             catch (Exception Ex)
             {
+                //NEW
+                if (sense_o != null)
+                {
+                    sense_o.Dispose();
+                    GC.Collect();
+                }
+
                 DisplayData(Ex.Message);
                 System.Diagnostics.Debug.WriteLine(Ex.Message);
             }
+            */
         }
 
         private void btn_dnwld_eeprom_Click(object sender, EventArgs e)
@@ -171,6 +204,13 @@ namespace SensorCollectorForm
             }
             catch (Exception Ex)
             {
+                //NEW
+                if (sense_o != null)
+                {
+                    sense_o.Dispose();
+                    GC.Collect();
+                }
+
                 DisplayData(Ex.Message);
                 System.Diagnostics.Debug.WriteLine(Ex.Message);
             }
@@ -222,7 +262,10 @@ namespace SensorCollectorForm
                 int.Parse(DateTime.Now.ToString("HH")), 
                 int.Parse(DateTime.Now.ToString("mm")), 
                 0);
-            API.InsertDeviceData("778f91e0-48df-4429-b8a2-b5f86b0e5905", (decimal)22, controllerkey, ConvertedTime);
+            // C
+            API.InsertDeviceData("1635E944-9486-4CAA-A2F2-D1D3B8913503", (decimal)22, controllerkey, ConvertedTime);
+            // A
+            //API.InsertDeviceData("778f91e0-48df-4429-b8a2-b5f86b0e5905", (decimal)22, controllerkey, ConvertedTime);
             
             
             /*string testdevicekey = ConfigurationManager.AppSettings["TestDeviceKey"];
@@ -247,14 +290,27 @@ namespace SensorCollectorForm
             DisplayData("Can Connect to Google : " + status.ToString() + System.Environment.NewLine);
             System.Diagnostics.Debug.WriteLine("Can Connect to Google : " + status.ToString());
         }
-       
+
         #endregion
 
         #region EVENT TRIGGER FUNCTIONS
+
+        private void Sense_o_TIMEOUT_RESPONSE_RECEIVED()
+        {
+            if (sense_o != null)
+            {
+                sense_o.Dispose();
+                GC.Collect();
+            }
+        }
+
         void sense_o_TEMP_RESPONSE_ARRAY(byte[] Temp_Response_Array)
         {
             DisplayData(BitConverter.ToString(Temp_Response_Array) + '\n');
             DisplayData(System.Text.Encoding.ASCII.GetString(Temp_Response_Array) + '\n');
+
+            //sense_o.Dispose();
+            //GC.Collect();
         }
 
         void sense_o_EEPROM_RESPONSE_RECEIVED(TransactionStatusClass.TransactionValues STATUS)
@@ -276,8 +332,12 @@ namespace SensorCollectorForm
                     //Check4InternetThenUpdateToServer();                                 
                 }
             }
-            sense_o.Dispose();
-            GC.Collect();
+
+            if (sense_o != null)
+            {
+                sense_o.Dispose();
+                GC.Collect();
+            }
         }
 
         void sense_o_CLR_EEPROM_RESPONSE_RECEIVED(TransactionStatusClass.TransactionValues STATUS)
@@ -293,8 +353,11 @@ namespace SensorCollectorForm
                 UpdateListView(2, STATUS.ToString(), Time, 0);
             }
 
-            sense_o.Dispose();
-            GC.Collect();
+            if (sense_o != null)
+            {
+                sense_o.Dispose();
+                GC.Collect();
+            }
         }
 
         void sense_o_SET_RTC_RESPONSE_RECEIVED(TransactionStatusClass.TransactionValues STATUS)
@@ -312,8 +375,34 @@ namespace SensorCollectorForm
                 UpdateListView(0, STATUS.ToString(), Time, 0);
             }
 
-            sense_o.Dispose();
-            GC.Collect();
+            if (sense_o != null)
+            {
+                sense_o.Dispose();
+                GC.Collect();
+            }
+        }
+
+        private void Sense_o_GET_RTC_RESPONSE_RECEIVED(TransactionStatusClass.TransactionValues STATUS)
+        {
+            System.Diagnostics.Debug.WriteLine("GET RTC Response Received ");
+
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new MethodInvoker(() => Sense_o_GET_RTC_RESPONSE_RECEIVED(STATUS)));
+            }
+            else
+            {
+                string Time = DateTime.Now.ToString("yyyy-MM-dd-HHmm-ss");
+                System.Diagnostics.Debug.WriteLine("sense_o_GET_RTC_RESPONSE_RECEIVED : Time : " + Time);
+                UpdateListView(4, STATUS.ToString(), Time, 0);
+            }
+
+            if (sense_o != null)
+            {
+                sense_o.Dispose();
+                GC.Collect();
+            }
+
         }
 
 
@@ -470,7 +559,7 @@ namespace SensorCollectorForm
         }
 
         public static bool CheckForInternetConnection()
-        {
+        {   
             System.Diagnostics.Debug.WriteLine("Begin Check for internet connection");
 
             try
@@ -500,9 +589,11 @@ namespace SensorCollectorForm
                 GetSerialPorts();
                 if (SelectedPort != "")
                 {
-                    sense_o = new SENSOR_OBJECT(SENSOR_OBJECT.EBaudRate.Baud9600, SelectedPort);
+                    sense_o = new SENSOR_OBJECT(SENSOR_OBJECT.EBaudRate.Baud250000, SelectedPort);
                     sense_o.TEMP_RESPONSE_ARRAY += sense_o_TEMP_RESPONSE_ARRAY;
                     sense_o.EEPROM_RESPONSE_RECEIVED += sense_o_EEPROM_RESPONSE_RECEIVED;
+                    sense_o.CLR_EEPROM_RESPONSE_RECEIVED += sense_o_CLR_EEPROM_RESPONSE_RECEIVED;
+                    sense_o.TIMEOUT_RESPONSE_RECEIVED += Sense_o_TIMEOUT_RESPONSE_RECEIVED;
 
                     sense_o.Send_Download_EEPROM();
                 }
@@ -516,8 +607,16 @@ namespace SensorCollectorForm
             {
                 System.Diagnostics.Debug.WriteLine(Ex.ToString());
                 DisplayData(Ex.ToString());
+
+                if (sense_o != null)
+                {
+                    sense_o.Dispose();
+                    GC.Collect();
+                }
             }            
         }
+
+
 
         private void Clear_EEPROM()
         {
@@ -526,9 +625,10 @@ namespace SensorCollectorForm
                 GetSerialPorts();
                 if (SelectedPort != "")
                 {
-                    SENSOR_OBJECT sense_o = new SENSOR_OBJECT(SENSOR_OBJECT.EBaudRate.Baud9600, SelectedPort);
+                    sense_o = new SENSOR_OBJECT(SENSOR_OBJECT.EBaudRate.Baud250000, SelectedPort);
                     sense_o.TEMP_RESPONSE_ARRAY += sense_o_TEMP_RESPONSE_ARRAY;
                     sense_o.CLR_EEPROM_RESPONSE_RECEIVED += sense_o_CLR_EEPROM_RESPONSE_RECEIVED;
+                    sense_o.TIMEOUT_RESPONSE_RECEIVED += Sense_o_TIMEOUT_RESPONSE_RECEIVED;
 
                     sense_o.Send_Clear_EEPROM();
                 }
@@ -542,6 +642,12 @@ namespace SensorCollectorForm
             {
                 System.Diagnostics.Debug.WriteLine(Ex.ToString());
                 DisplayData(Ex.ToString());
+
+                if (sense_o != null)
+                {
+                    sense_o.Dispose();
+                    GC.Collect();
+                }
             }            
         }
 
@@ -552,9 +658,11 @@ namespace SensorCollectorForm
                 GetSerialPorts();
                 if (SelectedPort != "")
                 {
-                    sense_o = new SENSOR_OBJECT(SENSOR_OBJECT.EBaudRate.Baud9600, SelectedPort);
+                    sense_o = new SENSOR_OBJECT(SENSOR_OBJECT.EBaudRate.Baud250000, SelectedPort);
                     sense_o.SET_RTC_RESPONSE_RECEIVED += sense_o_SET_RTC_RESPONSE_RECEIVED;
                     sense_o.TEMP_RESPONSE_ARRAY += sense_o_TEMP_RESPONSE_ARRAY;
+                    sense_o.TIMEOUT_RESPONSE_RECEIVED += Sense_o_TIMEOUT_RESPONSE_RECEIVED;
+
                     sense_o.Set_RTC();
                 }
                 else
@@ -567,6 +675,12 @@ namespace SensorCollectorForm
             {
                 System.Diagnostics.Debug.WriteLine(Ex.ToString());
                 DisplayData(Ex.ToString());
+
+                if (sense_o != null)
+                {
+                    sense_o.Dispose();
+                    GC.Collect();
+                }
             }
         }
 
@@ -608,6 +722,12 @@ namespace SensorCollectorForm
             {
                 System.Diagnostics.Debug.WriteLine(Ex.ToString());
                 DisplayData(Ex.ToString());
+
+                if (sense_o != null)
+                {
+                    sense_o.Dispose();
+                    GC.Collect();
+                }
             }
         }
 
@@ -633,5 +753,10 @@ namespace SensorCollectorForm
         }
         #endregion
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            DateTime ConvertedTime = new DateTime(2000, 01, 0, 00, 00, 0);
+
+        }
     }
 }

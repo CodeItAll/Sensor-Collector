@@ -10,6 +10,17 @@
             </summary>
             <param name="SerialData"> Array of Received Serial byte values </param>
         </member>
+        <member name="T:Library.Generic">
+            <summary>
+            Generic Functions Class
+            </summary>
+        </member>
+        <member name="T:Library.SerialPortClass.ReceivedSerialEventHandler">
+            <summary>
+            Serial Data Received Event
+            </summary>
+            <param name="SerialData"> Array of Received Serial byte values </param>
+        </member>
         <member name="F:TestSerialDLL.SerialWrapper.iBaudRate">
             <summary>
             The baud rate at which the communications device operates.
@@ -137,17 +148,6 @@
             <summary>
             Defines the control setting for a serial communications device.
             </summary>
-        </member>
-        <member name="T:Library.Generic">
-            <summary>
-            Generic Functions Class
-            </summary>
-        </member>
-        <member name="T:Library.SerialPortClass.ReceivedSerialEventHandler">
-            <summary>
-            Serial Data Received Event
-            </summary>
-            <param name="SerialData"> Array of Received Serial byte values </param>
         </member>
         <member name="T:ScenarioControl.Library.Properties.Resources">
             <summary>

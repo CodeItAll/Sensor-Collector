@@ -122,7 +122,7 @@ namespace Library
         public void ClearEEPROM()
         {
             //CLEAR EEPROM
-            CurrentState = PacketStates.PacketState.DOWNLOAD_EEPROM;
+            CurrentState = PacketStates.PacketState.CLEAR_EEPROM;
             _SerialInstance.WriteCLREEPROM();
         }
         
@@ -175,101 +175,139 @@ namespace Library
                             {                           
                                  //Data Class Instantiation
                                 TransactionStatusClass cCompleted = new TransactionStatusClass();
-                                 EEPROMSerialDataClass Data = new EEPROMSerialDataClass();                                                                                               
+                                 EEPROMSerialDataClass Data = new EEPROMSerialDataClass();
+                                int yy; 
+                                int MM; 
+                                int dd; 
+                                int HH; 
+                                int mm;
+
+                                string syy; 
+                                string syyyy; 
+                                string sMM;
+                                string sdd;
+                                string sHH; 
+                                string smm;
+
 
                                 //Start Decoding - Check that array contains LineFeed and Carriage Returm
                                 if (SerialData.Contains((byte)0x0d) && SerialData.Contains((byte)0x0a)) 
                                 {
-                                     //Remove Carriage Returm and Line Feed
-                                    byte[] newArray = SerialData.Where(b => (b != 0x0d)&(b != 0x0a)).ToArray();
-
-                                    if (newArray.Length > 2)
+                                    try
                                     {
-                                        //Should do a mod Test to ensure that the right number of bytes are here.
-                                        Stream stream = new MemoryStream(newArray);
-                                        BinaryReader reader = new BinaryReader(stream);
+                                        //Remove Carriage Returm and Line Feed
+                                        byte[] newArray = SerialData.Where(b => (b != 0x0d)&(b != 0x0a)).ToArray();
 
-                                        BigEndianReader BigEndianReader = new BigEndianReader(reader);
-
-                                        UInt16 mask = 0x03FF;
-                                        UInt16 BatteryVoltage = BigEndianReader.ReadUInt16();
-                                        Data.ControllerBatteryVoltage = (UInt16)(BatteryVoltage & mask);
-                                        Data.ConvertedBatteryVoltage = Convert.ToDecimal(Data.ControllerBatteryVoltage) * 3.3M * 3 / 1023;
-                                        byte seperationbyte;
-
-                                        while (BigEndianReader.BaseStream.Position != BigEndianReader.BaseStream.Length)
+                                        if (newArray.Length > 2)
                                         {
-                                            byte bID = 0;
-                                            byte bTemp = 0;
-                                            string sDate = String.Empty;
-                                            try
+                                            //Should do a mod Test to ensure that the right number of bytes are here.
+                                            Stream stream = new MemoryStream(newArray);
+                                            BinaryReader reader = new BinaryReader(stream);
+
+                                            BigEndianReader BigEndianReader = new BigEndianReader(reader);
+
+                                            //UInt16 mask = 0x03FF;
+                                            //UInt16 BatteryVoltage = BigEndianReader.ReadUInt16();
+                                            //Data.ControllerBatteryVoltage = (UInt16)(BatteryVoltage & mask);
+                                            //Data.ConvertedBatteryVoltage = Convert.ToDecimal(Data.ControllerBatteryVoltage) * 3.3M * 3 / 1023;
+                                            byte seperationbyte;
+
+                                            while (BigEndianReader.BaseStream.Position != BigEndianReader.BaseStream.Length)
                                             {
-                                                bID = BigEndianReader.ReadByte();
-                                                Data.DeviceID.Add(bID);
+                                                char[] cMAC;
 
-                                                bTemp = BigEndianReader.ReadByte();
-                                                Data.DeviceTemp.Add(bTemp);
 
+                                                byte[] cTemp = new byte[2];
+
+                                                string sDate = String.Empty;
+
+                                                //cMAC = Encoding.UTF8.GetChars(BigEndianReader.ReadBytes(6));
+                                                string BaseStationMacAddress = BitConverter.ToString(BigEndianReader.ReadBytes(3)).Replace("-", string.Empty);
+                                                //Sensor Mac Address
+                                                string sMac = BitConverter.ToString(BigEndianReader.ReadBytes(3)).Replace("-", string.Empty);
+                                                cMAC = sMac.ToCharArray();
+                                                Data.BaseMAC.Add(cMAC);
+
+                                                // READ BATTERY VOLTAGE
+                                                UInt16 mask = 0x03FF;
+                                                UInt16 BatteryVoltage = BigEndianReader.ReadUInt16();
+                                                Data.TempBatteryVoltage.Add((UInt16)(BatteryVoltage & mask));
+
+                                                //READ SENSOR TEMPERATURE
+                                                cTemp = BigEndianReader.ReadBytes(4);
+                                                float myFloatTemp = BitConverter.ToSingle(cTemp, 0);
+                                                Data.TempSensorValue.Add(cTemp);
+                                                Data.ConvertedTemp.Add((decimal)(myFloatTemp));
+
+                                                //READ TIME DATE BYTES BEFORE DOING CONVERSION
                                                 sDate = Encoding.UTF8.GetString(BigEndianReader.ReadBytes(10));
                                                 Data.DeviceDateTime.Add(sDate);
+                                                //READ END OF TEMP DATA SEPERATOR
                                                 seperationbyte = BigEndianReader.ReadByte();
+                                            
+                                                //CONVERT TIME DATE TO APPROPRIATE FORMAT
+                                                Data.yy.Add(sDate.ToCharArray(0, 2));
+                                                Data.MM.Add(sDate.ToCharArray(2, 2));
+                                                Data.dd.Add(sDate.ToCharArray(4, 2));
+                                                Data.HH.Add(sDate.ToCharArray(6, 2));
+                                                Data.mm.Add(sDate.ToCharArray(8, 2));
+
+                                                syy = new string(sDate.ToCharArray(0, 2));
+                                                syyyy = DateTime.Now.ToString("yyyy");
+                                                sMM = new string(sDate.ToCharArray(2, 2));
+                                                sdd = new string(sDate.ToCharArray(0, 2));
+                                                sHH = new string(sDate.ToCharArray(6, 2));
+                                                smm = new string(sDate.ToCharArray(8, 2));
+
+                                                yy = int.Parse(syyyy.Remove(2, 2) + syy);
+                                                MM = int.Parse(sMM);
+                                                dd = int.Parse(sdd);
+                                                HH = int.Parse(sHH);
+                                                mm = int.Parse(smm);
+
+                                                if (MM < 1)
+                                                {MM = 1;}
+
+                                                if (dd < 1)
+                                                {dd = 1;}
+
+                                                //DateTime test = DateTime.Now.ToString("yyyy");
+                                                DateTime ConvertedTime = new DateTime(yy, MM, dd, HH, mm, 0);
+
+                                                Data.ConvertedDateTime.Add(ConvertedTime);
                                             }
-                                            catch (Exception Ex)
+
+                                            //if ((Data.DeviceTemp.Count == Data.DeviceID.Count) && (Data.DeviceDateTime.Count == Data.DeviceID.Count))
+                                            if ((Data.TempSensorValue.Count == Data.BaseMAC.Count) && (Data.DeviceDateTime.Count == Data.BaseMAC.Count))
                                             {
-                                                // Catch decode Exception - this will be triggered if binary reader gets to the end of the stream before
-                                                // identifying the CRLF
-                                                cCompleted.TransactionStatus = TransactionStatusClass.TransactionValues.FAILED;
-                                                 System.Diagnostics.Debug.WriteLine(Ex.ToString());
+                                                cCompleted.TransactionStatus = TransactionStatusClass.TransactionValues.SUCCESS;
+                                            
+                                                System.Diagnostics.Debug.WriteLine("Class: CommsDecoder, Line 248: Success - Received Download EEPROM Event");
+                                                // Close Com Port
+                                                //_SerialInstance.WriteData(Encoding.UTF8.GetBytes("!A"));
+                                                //////////////////////////////////////
+                                            
+                                            
+                                                System.Diagnostics.Debug.WriteLine("Class: CommsDecoder, Line 256: Success - Send EOT");
                                             }
-
-                                            Data.ConvertedTemp.Add(((decimal)(((Convert.ToDecimal(bTemp) * 3.3M / 1023) - 0.45M) * 100)));
-
-                                            Data.dd.Add(sDate.ToCharArray(0, 2));
-                                            Data.MM.Add(sDate.ToCharArray(2, 2));
-                                            Data.yy.Add(sDate.ToCharArray(4, 2));
-                                            Data.HH.Add(sDate.ToCharArray(6, 2));
-                                            Data.mm.Add(sDate.ToCharArray(8, 2));
-
-                                            string syy = new string(sDate.ToCharArray(4, 2));
-                                            string syyyy = DateTime.Now.ToString("yyyy");
-                                            string sMM = new string(sDate.ToCharArray(2, 2));
-                                            string sdd = new string(sDate.ToCharArray(0, 2));
-                                            string sHH = new string(sDate.ToCharArray(6, 2));
-                                            string smm = new string(sDate.ToCharArray(8, 2));
-
-                                            int yy = int.Parse(syyyy.Remove(2, 2) + syy);
-                                            int MM = int.Parse(sMM);
-                                            int dd = int.Parse(sdd);
-                                            int HH = int.Parse(sHH);
-                                            int mm = int.Parse(smm);
-                                            //DateTime test = DateTime.Now.ToString("yyyy");
-                                            DateTime ConvertedTime = new DateTime(yy, MM, dd, HH, mm, 0);
-
-                                            Data.ConvertedDateTime.Add(ConvertedTime);
-                                        }
-
-                                        if ((Data.DeviceTemp.Count == Data.DeviceID.Count) && (Data.DeviceDateTime.Count == Data.DeviceID.Count))
-                                        {
-                                            cCompleted.TransactionStatus = TransactionStatusClass.TransactionValues.SUCCESS;
-                                            
-                                            System.Diagnostics.Debug.WriteLine("Class: CommsDecoder, Line 248: Success - Received Download EEPROM Event");
-                                            // Close Com Port
-                                            //_SerialInstance.WriteData(Encoding.UTF8.GetBytes("!A"));
-                                            //////////////////////////////////////
-                                            
-                                            
-                                            System.Diagnostics.Debug.WriteLine("Class: CommsDecoder, Line 256: Success - Send EOT");
+                                            else
+                                            {
+                                                cCompleted.TransactionStatus = TransactionStatusClass.TransactionValues.FAILED;
+                                                System.Diagnostics.Debug.WriteLine("Class: CommsDecoder, Line 258: Failed Count not equal");
+                                            }
                                         }
                                         else
                                         {
-                                            cCompleted.TransactionStatus = TransactionStatusClass.TransactionValues.FAILED;
-                                            System.Diagnostics.Debug.WriteLine("Class: CommsDecoder, Line 258: Failed Count not equal");
+                                            cCompleted.TransactionStatus = TransactionStatusClass.TransactionValues.SUCCESS;
+                                            System.Diagnostics.Debug.WriteLine("Class: CommsDecoder, Line 263: Success But Download EEPROM Packet <2");
                                         }
                                     }
-                                    else
+                                    catch (Exception Ex)
                                     {
-                                        cCompleted.TransactionStatus = TransactionStatusClass.TransactionValues.SUCCESS;
-                                        System.Diagnostics.Debug.WriteLine("Class: CommsDecoder, Line 263: Success But Download EEPROM Packet <2");
+                                        // Catch decode Exception - this will be triggered if binary reader gets to the end of the stream before
+                                        // identifying the CRLF
+                                        cCompleted.TransactionStatus = TransactionStatusClass.TransactionValues.FAILED;
+                                        System.Diagnostics.Debug.WriteLine(Ex.ToString());
                                     }
                                 }
                                 else
@@ -319,8 +357,8 @@ namespace Library
                                         sDate.yy = reader.ReadChars(2);
                                         sDate.MM = reader.ReadChars(2);
                                         sDate.dd = reader.ReadChars(2);
-                                        sDate.dd = reader.ReadChars(2);
-                                        sDate.ww = reader.ReadChars(2);
+                                        sDate.dow = reader.ReadChars(2);
+                                        //sDate.ww = reader.ReadChars(2);
                                         sDate.HH = reader.ReadChars(2);
                                         sDate.mm = reader.ReadChars(2);
 

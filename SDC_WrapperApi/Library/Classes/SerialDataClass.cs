@@ -7,9 +7,14 @@ namespace Library
 {
     class EEPROMSerialDataClass
     {
+        public List<char[]> BaseMAC; //NEW
+        public List<UInt16> TempBatteryVoltage;
+        public List<byte[]> TempSensorValue; //NEW
+        public List<decimal> TempSensorValueConverted;
+
         public UInt16 ControllerBatteryVoltage;
-        public List<byte> DeviceID;// = new List<byte>();
-        public List<byte> DeviceTemp;// = new List<byte>();
+        public List<byte> DeviceID;// = new List<byte>();        
+        public List<byte> DeviceTemp;// = new List<byte>();        
         public List<string> DeviceDateTime;// = new List<string>();
 
         public List<decimal> ConvertedTemp;
@@ -22,11 +27,15 @@ namespace Library
         public List<char[]> mm;
 
         public EEPROMSerialDataClass()
-        {            
-            DeviceID = new List<byte>();
-            DeviceTemp = new List<byte>();
-            DeviceDateTime = new List<string>();
+        {
+            BaseMAC = new List<char[]>(); //New
+            TempSensorValue = new List<byte[]>(); // New
+            TempSensorValueConverted = new List<decimal>(); //NEW
+            TempBatteryVoltage = new List<UInt16>();
 
+            DeviceID = new List<byte>();            
+            DeviceTemp = new List<byte>();            
+            DeviceDateTime = new List<string>();
             ConvertedTemp = new List<decimal>();
             ConvertedDateTime = new List<DateTime>();
             yy = new List<char[]>();

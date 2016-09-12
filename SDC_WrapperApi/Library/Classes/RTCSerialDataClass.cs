@@ -12,6 +12,7 @@ namespace Library
         public char[] yy;
         public char[] MM;
         public char[] dd;
+        public char[] dow;
         public char[] ww;
         public char[] HH;
         public char[] mm;
@@ -21,6 +22,7 @@ namespace Library
             yy = new char[2];
             MM = new char[2];
             dd = new char[2];
+            dow = new char[2];
             ww = new char[2];
             HH = new char[2];
             mm = new char[2];

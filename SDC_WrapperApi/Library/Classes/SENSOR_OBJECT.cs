@@ -34,7 +34,8 @@ namespace Library
             Baud19200, //= "19200",
             Baud38400, //= "38400",
             Baud57600, //= "57600",
-            Baud115200 //= "115200"           
+            Baud115200, //= "115200"
+            Baud250000           
         };
         
        
@@ -67,7 +68,12 @@ namespace Library
         //Returns Set RTC Status
         public delegate void SET_RTC_RESPONSE_DELEGATE(TransactionStatusClass.TransactionValues STATUS);
         public event SET_RTC_RESPONSE_DELEGATE SET_RTC_RESPONSE_RECEIVED;
-        //Returns Clear EEPROM STATUS
+        //Returns Get RTC STATUS
+        public delegate void GET_RTC_RESPONSE_DELEGATE(TransactionStatusClass.TransactionValues STATUS);
+        public event SET_RTC_RESPONSE_DELEGATE GET_RTC_RESPONSE_RECEIVED;
+        //Returns TIMEOUT ERROR
+        public delegate void TIMEOUT_RESPONSE_DELEGATE();
+        public event TIMEOUT_RESPONSE_DELEGATE TIMEOUT_RESPONSE_RECEIVED;
 
         #endregion
 
@@ -202,6 +208,7 @@ namespace Library
 
         void decoder_RTC_Data_Received(RTCSerialDataClass RTC_DATA, TransactionStatusClass STATUS)
         {
+            Function_Return_GET_RTC_STATUS(STATUS.TransactionStatus);
            // decoderDisposeCollect();
             //Not implemented
         }
@@ -221,14 +228,14 @@ namespace Library
             {                
                 try
                 {
-                    int arraysize = EEPROM_DATA.DeviceID.Count;
+                    int arraysize = EEPROM_DATA.BaseMAC.Count;
 
                     string controllerkey = ConfigurationManager.AppSettings["ConrollerKey"];
                     CodeScience.EeziTracker.Controller.Api.Controller EeziTrackerApi = new CodeScience.EeziTracker.Controller.Api.Controller("ConnectionString");
                     for (int i = 0; i < arraysize; i++)
                     {
-                        System.Diagnostics.Debug.WriteLine(ReturnGUID(EEPROM_DATA.DeviceID[i]));
-                        string guid = ReturnGUID(EEPROM_DATA.DeviceID[i]);
+                        System.Diagnostics.Debug.WriteLine(MAC2GUID(EEPROM_DATA.BaseMAC[i]));
+                        string guid = MAC2GUID(EEPROM_DATA.BaseMAC[i]);
                         if (guid != "")
                         {
                             EeziTrackerApi.InsertDeviceData(guid, EEPROM_DATA.ConvertedTemp[i], controllerkey, EEPROM_DATA.ConvertedDateTime[i]);
@@ -295,6 +302,14 @@ namespace Library
                 return guidvalue;
             }
         }
+
+        private string MAC2GUID(char[] cMAC)
+        {
+            //30dd879c - ee2f - 11db - 8314 - 0800200c9a66
+            string sMAC = new string(cMAC);
+            string guidvalue = "00000000-0000-0000-0000-"+ sMAC;
+            return guidvalue;
+        }
         #endregion
 
         #region EVENT TRIGGERS FUNCTIONS
@@ -307,6 +322,11 @@ namespace Library
                 TempDataResponse.ParamName1 = "Error";
                 TempDataResponse.ParamValue1 = "Timeout";
                 TEMP_RESPONSE_ARRAY(Encoding.ASCII.GetBytes("Timeout Error"));
+            }
+
+            if (TIMEOUT_RESPONSE_RECEIVED != null)
+            {
+                TIMEOUT_RESPONSE_RECEIVED();
             }
         }
 
@@ -344,7 +364,15 @@ namespace Library
                 SET_RTC_RESPONSE_RECEIVED(Status);
             }
         }
-        
+
+        void Function_Return_GET_RTC_STATUS(TransactionStatusClass.TransactionValues Status)
+        {
+            if (GET_RTC_RESPONSE_RECEIVED != null)
+            {
+                GET_RTC_RESPONSE_RECEIVED(Status);
+            }
+        }
+
         #endregion
 
         #region General function - RETURN BAUD STRINGS / GET DAY OF WEEK
@@ -352,6 +380,10 @@ namespace Library
         {
             switch (Baud)
             {
+                case EBaudRate.Baud250000:
+                {
+                    return "250000";
+                }
                 case EBaudRate.Baud115200:
                 {
                     return "115200";
